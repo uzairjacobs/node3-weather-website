@@ -13,13 +13,15 @@ const forecast = (latitude, longitude, callback) => {
     const temperature = body.current.temperature;
     const precip = body.current.precip;
     const weather = body.current.weather_descriptions[0];
+    const wind_speed = body.current.wind_speed;
       callback(undefined, 
         weather +
         ": It is currently " +
         temperature +
         " degrees out. There is a " +
         precip +
-        "% of rain."
+        "% of rain. Wind speed is currently " + wind_speed + " km/h." 
+        
       );
     }
   });
